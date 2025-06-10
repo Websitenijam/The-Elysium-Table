@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Elysium Tables - Contemporary Egyptian Restaurant in Surry Hills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-image {
+            height: 100vh;
+            min-height: 600px;
+        }
+        
+        .menu-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: center;
+        }
+        
+        .menu-hover:hover, .menu-hover:focus {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+        
+        .menu-hover:active {
+            transform: translateY(-3px) scale(0.98);
+        }
+        
+        .image-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-hover:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .scroll-progress {
+            height: 3px;
+            background: linear-gradient(90deg, #d4a762 0%, #e67e22 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <div id="progress" class="scroll-progress fixed top-0 left-0 z-50"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 backdrop-blur-md z-40 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold title-font tracking-tight text-amber-800">The Elysium Tables</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="hover:text-amber-700 transition">Home</a>
+                    <a href="#menu" class="hover:text-amber-700 transition">Menus</a>
+                    <a href="#about" class="hover:text-amber-700 transition">About</a>
+                    <a href="#reservations" class="hover:text-amber-700 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#" class="block py-2 hover:text-amber-700">Home</a>
+            <a href="#menu" class="block py-2 hover:text-amber-700">Menus</a>
+            <a href="#about" class="block py-2 hover:text-amber-700">About</a>
+            <a href="#reservations" class="block py-2 hover:text-amber-700">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative hero-image w-full">
+        <img src="https://images.squarespace-cdn.com/content/v1/61e8f769cba3ef48c00b6dcd/e1659161-c811-4b38-a89f-512be66061f6/014A4360.jpg?format=1000w" 
+             alt="NOUR Restaurant Interior" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="text-center px-6 max-w-4xl">
+                <h1 class="title-font text-5xl md:text-7xl font-bold text-white mb-6">The Elysium Tables</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 font-light">
+                    One hatted contemporary Egyptian restaurant in Surry Hills
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#reservations" class="px-8 py-3 bg-amber-700 text-white rounded hover:bg-amber-800 transition">Book a Table</a>
+                    <a href="#menu" class="px-8 py-3 bg-white text-amber-800 rounded hover:bg-gray-100 transition">View Menus</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down text-white text-4xl">
+            <i class="fas fa-chevron-down animate-bounce"></i>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="mb-16 text-center">
+                <h2 class="title-font text-4xl mb-4 text-amber-800">Discover Egyptian Cuisine Reimagined</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        The Elysium Tables was born from a passion for reviving authentic Egyptian culinary traditions with a modern twist. We bring the flavors that nourished pharaohs and pyramids into the 21st century.
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Our elegant contemporary space pays homage to Egypt's golden age while our menu explores the country's rich culinary history along the Nile. You may think you know Egyptian food, but we have treasures yet to be uncovered.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        At The Elysium Tables, we resurrect forgotten Egyptian ingredients and techniques, creating dishes fit for modern royalty.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://images.squarespace-cdn.com/content/v1/61e8f769cba3ef48c00b6dcd/6460831a-91b7-4efe-9b36-9a48142dcd1f/Nour+%28Apr25%29+-+Credit+Jiwon+Kim-68of75.jpg" 
+                         alt="NOUR Restaurant Dish" 
+                         class="rounded-lg shadow-lg image-hover w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Elegant Story Section -->
+    <section class="py-28 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-2/5 mb-12 md:mb-0 md:pr-12 flex items-center">
+                    <div class="relative">
+                        <div class="absolute -inset-8 bg-amber-100 transform -rotate-2 rounded-lg z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Chef Amira Hassan" 
+                             class="relative z-10 rounded-lg shadow-xl image-hover">
+                    </div>
+                </div>
+                <div class="md:w-3/5">
+                    <h2 class="title-font text-4xl md:text-5xl mb-6 text-amber-800">Our Cuisine</h2>
+                    <div class="w-24 h-1 bg-amber-600 mb-8"></div>
+                    <p class="text-2xl leading-relaxed text-gray-800 mb-12 italic">
+                        "At The Elysium Table, each dish is a tribute to Egypt's rich culinary heritage — thoughtfully reimagined for the refined palate."
+                    </p>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-medium mb-4 text-gray-800 flex items-center">
+                                <span class="w-4 h28 bg-amber-500 block mr-4"></span>
+                                From Street to Royalty
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                From timeless street classics to royal-inspired creations, our menu bridges the flavors of tradition with the elegance of modern fine dining. Discover the evolution of Egyptian flavors through carefully composed dishes that honor both the past and present.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-medium mb-4 text-gray-800 flex items-center">
+                                <span class="w-4 h28 bg-amber-500 block mr-4"></span>
+                                Crafted With Purpose
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Every plate is crafted with intention, using authentic ingredients and elevated presentation to awaken the senses. Our chefs combine ancient techniques with contemporary creativity, transforming humble ingredients into refined culinary experiences.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-medium mb-4 text-gray-800 flex items-center">
+                                <span class="w-4 h28 bg-amber-500 block mr-4"></span>
+                                A Sensory Journey
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Let us transport you through Egypt's vibrant food culture — through spice markets, family tables, and ancient feasts — one thoughtfully composed course at a time. Our tasting menus tell the story of Egyptian cuisine across centuries and regions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Grid -->
+    <section class="py-20 bg-amber-900 text-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="mb-16 text-center">
+                <h2 class="title-font text-4xl mb-4">Our Promise</h2>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="p-12 border border-amber-700 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-amber-800 transform translate-x-full group-hover:translate-x-0 transition duration-500 z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-1 bg-white mb-6"></div>
+                        <h3 class="title-font text-2xl mb-6">Our Mission</h3>
+                        <p class="leading-relaxed">
+                            To be custodians of Egypt's culinary treasures while pioneering its contemporary expression. We source ethically, cook respectfully, and serve generously - bridging millennia of tradition with modern sensibilities. Every dish honors history while embracing innovation.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-12 border border-amber-700 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-amber-800 transform -translate-x-full group-hover:translate-x-0 transition duration-500 z-0"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-1 bg-white mb-6"></div>
+                        <h3 class="title-font text-2xl mb-6">Our Vision</h3>
+                        <p class="leading-relaxed">
+                            A world where Egyptian cuisine takes its rightful place at the global table. Where every spice tells a story, every technique connects generations, and every meal becomes a portal to the Nile's golden age. We dream of sustainable food systems inspired by ancient wisdom that nourish both body and soul.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg shadow-md image-hover">
+                    <img src="https://images.squarespace-cdn.com/content/v1/61e8f769cba3ef48c00b6dcd/91207044-c1c4-4242-9678-fe77bb1c1cd7/Nour+%28Apr25%29+-+Credit+Jiwon+Kim-5of75.jpg" 
+                         alt="NOUR Restaurant Dish" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md image-hover">
+                    <img src="https://images.squarespace-cdn.com/content/v1/61e8f769cba3ef48c00b6dcd/8016aa05-c9d6-4b45-91ed-6eab1e71a94f/Nour+%28Apr25%29+-+Credit+Jiwon+Kim-7of75.jpg" 
+                         alt="NOUR Restaurant Dish" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md image-hover">
+                    <img src="https://images.squarespace-cdn.com/content/v1/61e8f769cba3ef48c00b6dcd/6460831a-91b7-4efe-9b36-9a48142dcd1f/Nour+%28Apr25%29+-+Credit+Jiwon+Kim-68of75.jpg" 
+                         alt="NOUR Restaurant Dish" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-5xl">
+            <div class="mb-16 text-center">
+                <h2 class="title-font text-4xl mb-4 text-amber-800">Our Menu</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
+            </div>
+
+            <!-- Appetizers -->
+            <div class="mb-16">
+                <h3 class="title-font text-2xl mb-8 text-amber-800 border-b border-amber-200 pb-2">Appetizers | المقبلات</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover relative">
+                        <div class="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">Chef's Pick</div>
+                        <h4 class="font-bold text-lg mb-2">Ful Medames - فول مدمس</h4>
+                        <p class="text-gray-700">Our signature dish - creamy mashed fava beans slow-cooked with garlic, premium olive oil, fresh lemon, and cumin. Garnished with heirloom tomatoes and parsley. The national dish of Egypt done right.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover relative">
+                        <div class="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">House Specialty</div>
+                        <h4 class="font-bold text-lg mb-2">Shorbat Adas - شوربة عدس</h4>
+                        <p class="text-gray-700">Our award-winning velvety red lentil soup with garlic confit, caramelized carrots and onions, toasted cumin, and a hint of smoked paprika. Served with house-made croutons and a drizzle of truffle oil.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover" tabindex="0">
+                        <h4 class="font-bold text-lg mb-2">Baba Ghanoush - بابا غنوج</h4>
+                        <p class="text-gray-700">Roasted eggplant blended with tahini, garlic, lemon juice, and olive oil.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Warak Enab - ورق عنب</h4>
+                        <p class="text-gray-700">Grape leaves filled with rice, beef, herbs, and spices.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Salata Baladi - سلطة بلدي</h4>
+                        <p class="text-gray-700">Traditional Egyptian chopped salad of tomato, cucumber, onion, lemon juice, and olive oil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrées -->
+            <div class="mb-16">
+                <h3 class="title-font text-2xl mb-8 text-amber-800 border-b border-amber-200 pb-2">Entrées | الأطباق الرئيسية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover relative">
+                        <div class="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">Signature Dish</div>
+                        <h4 class="font-bold text-lg mb-2">Koshari - كشري</h4>
+                        <p class="text-gray-700">Egypt's beloved comfort food elevated - layers of perfectly cooked rice, lentils, macaroni and chickpeas under a crown of crispy onions and our signature spiced tomato sauce with a hint of garlic and cumin. Vegetarian yet deeply satisfying.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover relative">
+                        <div class="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">Customer Favorite</div>
+                        <h4 class="font-bold text-lg mb-2">Molokhia - ملوخية</h4>
+                        <p class="text-gray-700">Our award-winning version of Egypt's famous jute leaf stew - slow-cooked with chicken broth and generous amounts of garlic, served with free-range chicken thighs and Egyptian short-grain rice. Silky texture with robust flavors passed down through generations.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Hawawshi - حواوشي</h4>
+                        <p class="text-gray-700">Spiced ground beef or lamb stuffed in Egyptian baladi bread and baked until golden and crisp.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Mahshi - محشي</h4>
+                        <p class="text-gray-700">Zucchini, peppers, or grape leaves filled with aromatic herbed rice and cooked in tomato broth.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Taameya - طعمية</h4>
+                        <p class="text-gray-700">Egyptian fava bean falafel blended with fresh herbs and spices, deep-fried to a crisp perfection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="mb-16">
+                <h3 class="title-font text-2xl mb-8 text-amber-800 border-b border-amber-200 pb-2">Desserts | الحلويات</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Roz Bel Laban - رز باللبن</h4>
+                        <p class="text-gray-700">Creamy pudding of rice, milk, and sugar, delicately flavored with rose water or vanilla.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Basbousa - بسبوسة</h4>
+                        <p class="text-gray-700">A soft semolina cake soaked in sugar syrup, often topped with almonds or coconut flakes.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Umm Ali - أم علي</h4>
+                        <p class="text-gray-700">Warm dessert of flaky pastry with milk, nuts, and raisins.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Feteer Meshaltet — فطير مشلتت</h4>
+                        <p class="text-gray-700">A buttery, flaky pastry served warm with honey or jams.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Qatayef - قطايف</h4>
+                        <p class="text-gray-700">Stuffed sweet pancakes filled with nuts or cream, folded and sweetened with syrup.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="mb-16">
+                <h3 class="title-font text-2xl mb-8 text-amber-800 border-b border-amber-200 pb-2">Beverages | المشروبات</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover relative">
+                        <div class="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">Best-Seller</div>
+                        <h4 class="font-bold text-lg mb-2">Karkade - كركديه</h4>
+                        <p class="text-gray-700">A tangy, floral tea served hot or cold — refreshing and naturally caffeine-free.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Lemon bi Na'na' - ليمون بالنعناع</h4>
+                        <p class="text-gray-700">A zesty lemon drink blended with fresh mint and honey.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Sobia - سوبيا</h4>
+                        <p class="text-gray-700">Chilled coconut milk drink with sugar and vanilla.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Shai bi Na'na' - شاي بالنعناع</h4>
+                        <p class="text-gray-700">Fragrant black tea infused with fresh mint leaves. Served hot or iced.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md menu-hover">
+                        <h4 class="font-bold text-lg mb-2">Tamer Hindi - تمر هندي</h4>
+                        <p class="text-gray-700">Tangy tamarind drink sweetened and chilled.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-5xl text-center">
+            <div class="inline-block px-8 py-4 bg-amber-100 rounded-full mb-8">
+                <span class="text-amber-800 font-semibold">International Society of Egyptian Gastronomy</span>
+            </div>
+            <h2 class="title-font text-4xl mb-6 text-amber-800">Golden Ankh Award 2023</h2>
+            <p class="text-xl max-w-3xl mx-auto leading-relaxed">
+                Recognized by the International Society of Egyptian Gastronomy, our restaurant has earned the prestigious Golden Ankh for our authentic yet innovative takes on ancient Egyptian cuisine. Our chef's mastery of age-old techniques blended with modern sensibilities preserves the legacy of pharaonic kitchens while delighting contemporary diners.
+            </p>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="reservations" class="py-20 px-6 bg-gray-900 text-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="title-font text-4xl mb-6 text-center">Reserve Your Table</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto leading-relaxed text-center">
+                Join us at The Elysium Tables and prepare for a culinary journey through Egypt's golden age.
+            </p>
+            
+            <form class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="name" class="block mb-2 font-medium">Full Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 font-medium">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="phone" class="block mb-2 font-medium">Phone</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label for="guests" class="block mb-2 font-medium">Number of Guests</label>
+                        <select id="guests" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="1">1 person</option>
+                            <option value="2">2 people</option>
+                            <option value="3">3 people</option>
+                            <option value="4">4 people</option>
+                            <option value="5+">5+ people</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <label for="date" class="block mb-2 font-medium">Date</label>
+                        <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label for="time" class="block mb-2 font-medium">Time</label>
+                        <select id="time" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="occasion" class="block mb-2 font-medium">Occasion</label>
+                        <select id="occasion" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="none">None</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="business">Business</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label for="notes" class="block mb-2 font-medium">Special Requests</label>
+                    <textarea id="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                </div>
+                <button type="submit" class="w-full px-6 py-3 bg-amber-700 text-white rounded-md hover:bg-amber-800 transition duration-300 font-medium text-lg">
+                    Confirm Reservation
+                </button>
+                <p class="mt-4 text-gray-600 text-center">Or call us at <a href="tel:+639398600524" class="text-amber-700 hover:underline">0939 8600 524</a></p>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold title-font text-amber-800 mb-4">The Elysium Tables</h3>
+                    <p class="text-gray-700">123 Restaurant St<br>Surry Hills, NSW 2010</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Hours</h4>
+                    <p class="text-gray-700 mb-2"><strong>Dinner:</strong> Tue-Sat from 5pm</p>
+                    <p class="text-gray-700"><strong>Lunch:</strong> Fri from 12pm</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-700 mb-2">0939 8600 524</p>
+                    <p class="text-gray-700">theelysiumtable@gmail.com</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/theelysiumtable?igsh=a3FsamVzZGR2dmRs&utm_source=ig_contact_invite" class="text-amber-800 hover:text-amber-600 text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/people/The-Elysium-Table/61577069105848/" class="text-amber-800 hover:text-amber-600 text-2xl"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-12 pt-8 text-center">
+                <div class="mb-6 bg-amber-50 p-8 rounded-xl border border-amber-100 shadow-lg">
+                    <h4 class="title-font text-xl mb-4 text-amber-800 text-center">Quick Digital Reservation</h4>
+                    <div class="relative inline-block">
+                        <div class="absolute -inset-2 bg-amber-200 rounded-xl blur-md transform rotate-2"></div>
+                        <div class="relative bg-white p-4 rounded-lg">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://theelysiumtable.com/book&color=704214" 
+                                alt="Booking QR Code" 
+                                class="mx-auto w-32 h-32">
+                        </div>
+                    </div>
+                    <p class="text-amber-900 text-center mt-4 font-medium max-w-xs mx-auto">
+                        <i class="fas fa-mobile-alt mr-2"></i> Scan to instantly book your table
+                    </p>
+                    <p class="text-xs text-amber-800 text-center mt-2 opacity-75">Modern reservation meets ancient hospitality</p>
+                </div>
+                <p class="text-gray-600">&copy; 2023 The Elysium Tables. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Scroll progress indicator
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
