@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Elysium Tables - Contemporary Egyptian Restaurant in Surry Hills</title>
+    <title>The Elysium Table - Contemporary Egyptian Restaurant in Surry Hills</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -75,9 +75,9 @@
     <nav class="fixed w-full bg-white bg-opacity-90 backdrop-blur-md z-40 border-b border-gray-200">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold title-font tracking-tight text-amber-800">The Elysium Tables</div>
+                <a href="#top" class="text-2xl font-bold title-font tracking-tight text-amber-800 hover:text-amber-700 transition">The Elysium Table</a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#" class="hover:text-amber-700 transition">Home</a>
+                    <a href="#top" class="hover:text-amber-700 transition">Home</a>
                     <a href="#menu" class="hover:text-amber-700 transition">Menus</a>
                     <a href="#about" class="hover:text-amber-700 transition">About</a>
                     <a href="#reservations" class="hover:text-amber-700 transition">Contact</a>
@@ -92,21 +92,21 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4">
-            <a href="#" class="block py-2 hover:text-amber-700">Home</a>
-            <a href="#menu" class="block py-2 hover:text-amber-700">Menus</a>
-            <a href="#about" class="block py-2 hover:text-amber-700">About</a>
-            <a href="#reservations" class="block py-2 hover:text-amber-700">Contact</a>
+            <a href="#top" class="block py-2 hover:text-amber-700" onclick="mobileMenu.classList.add('hidden')">Home</a>
+            <a href="#menu" class="block py-2 hover:text-amber-700" onclick="mobileMenu.classList.add('hidden')">Menus</a>
+            <a href="#about" class="block py-2 hover:text-amber-700" onclick="mobileMenu.classList.add('hidden')">About</a>
+            <a href="#reservations" class="block py-2 hover:text-amber-700" onclick="mobileMenu.classList.add('hidden')">Contact</a>
         </div>
     </nav>
     
     <!-- Hero Section -->
-    <section class="relative hero-image w-full">
+    <section id="top" class="relative hero-image w-full">
         <img src="https://images.squarespace-cdn.com/content/v1/61e8f769cba3ef48c00b6dcd/e1659161-c811-4b38-a89f-512be66061f6/014A4360.jpg?format=1000w" 
              alt="NOUR Restaurant Interior" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
             <div class="text-center px-6 max-w-4xl">
-                <h1 class="title-font text-5xl md:text-7xl font-bold text-white mb-6">The Elysium Tables</h1>
+                <h1 class="title-font text-5xl md:text-7xl font-bold text-white mb-6">The Elysium Table</h1>
                 <p class="text-xl md:text-2xl text-white mb-8 font-light">
                     One hatted contemporary Egyptian restaurant in Surry Hills
                 </p>
@@ -132,7 +132,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg mb-6 leading-relaxed">
-                        The Elysium Tables was born from a passion for reviving authentic Egyptian culinary traditions with a modern twist. We bring the flavors that nourished pharaohs and pyramids into the 21st century.
+                        The Elysium Table was born from a passion for reviving authentic Egyptian culinary traditions with a modern twist. We bring the flavors that nourished pharaohs and pyramids into the 21st century.
                     </p>
                     <p class="text-lg mb-6 leading-relaxed">
                         Our elegant contemporary space pays homage to Egypt's golden age while our menu explores the country's rich culinary history along the Nile. You may think you know Egyptian food, but we have treasures yet to be uncovered.
@@ -501,7 +501,7 @@
                     <div class="relative inline-block">
                         <div class="absolute -inset-2 bg-amber-200 rounded-xl blur-md transform rotate-2"></div>
                         <div class="relative bg-white p-4 rounded-lg">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://theelysiumtable.com/book&color=704214" 
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://websitenijam.github.io/The-Elysium-Table/&color=704214" 
                                 alt="Booking QR Code" 
                                 class="mx-auto w-32 h-32">
                         </div>
@@ -511,7 +511,7 @@
                     </p>
                     <p class="text-xs text-amber-800 text-center mt-2 opacity-75">Modern reservation meets ancient hospitality</p>
                 </div>
-                <p class="text-gray-600">&copy; 2023 The Elysium Tables. All rights reserved.</p>
+                <p class="text-gray-600">&copy; 2023 The Elysium Table. All rights reserved.</p>
             </div>
         </div>
     </footer>
